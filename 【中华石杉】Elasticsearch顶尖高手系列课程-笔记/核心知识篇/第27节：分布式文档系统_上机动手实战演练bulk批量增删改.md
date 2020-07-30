@@ -2,7 +2,7 @@
 
 ### 1、bulk语法
 
-```json
+```http request
 POST /_bulk
 { "delete": { "_index": "test_index", "_type": "test_type", "_id": "3" }} 
 { "create": { "_index": "test_index", "_type": "test_type", "_id": "12" }}
@@ -26,7 +26,7 @@ POST /_bulk
 
 举例，比如你现在要创建一个文档，放bulk里面，看起来会是这样子的：
 
-```json
+```http request
 {"index": {"_index": "test_index", "_type", "test_type", "_id": "1"}}
 {"test_field1": "test1", "test_field2": "test2"}
 ```
@@ -58,8 +58,6 @@ bulk api对json的语法，有严格的要求，每个json串不能换行，只能放一行，同时一个json
 ```
 
 ```json
-
-
 {
   "took": 41,
   "errors": true,

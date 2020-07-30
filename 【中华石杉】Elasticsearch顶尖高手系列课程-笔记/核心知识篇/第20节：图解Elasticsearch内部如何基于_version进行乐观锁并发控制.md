@@ -4,7 +4,7 @@
 
 （1）_version元数据   
 
-```json
+```http request
 PUT /test_index/test_type/6
 {
   "test_field": "test test"
@@ -29,7 +29,7 @@ PUT /test_index/test_type/6
 
 第一次创建一个document的时候，它的_version内部版本号就是1；以后，每次对这个document执行修改或者删除操作，都会对这个_version版本号自动加1；哪怕是删除，也会对这条数据的版本号加1
 
-```json
+```http request
 {
   "found": true,
   "_index": "test_index",

@@ -4,6 +4,6 @@
 £¨2£©retry_on_conflict   
 £¨3£©_version   
 
-```json
+```http request
 post /index/type/id/_update?retry_on_conflict=5&version=6
 ```

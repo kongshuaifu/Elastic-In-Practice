@@ -4,7 +4,7 @@
 
 （1）先构造一条数据出来   
 
-```json
+```http request
 PUT /test_index/test_type/7
 {
   "test_field": "test test"
@@ -15,7 +15,7 @@ PUT /test_index/test_type/7
 
 （2）模拟两个客户端，都获取到了同一条数据
 
-```json
+```http request
 GET test_index/test_type/7
 
 {
@@ -36,7 +36,7 @@ GET test_index/test_type/7
 
 同时带上数据的版本号，确保说，es中的数据的版本号，跟客户端中的数据的版本号是相同的，才能修改
 
-```json
+```http request
 PUT /test_index/test_type/7?version=1 
 {
   "test_field": "test client 1"
@@ -61,7 +61,7 @@ PUT /test_index/test_type/7?version=1
 
 （4）另外一个客户端，尝试基于version=1的数据去进行修改，同样带上version版本号，进行乐观锁的并发控制
 
-```json
+```http request
 PUT /test_index/test_type/7?version=1 
 {
   "test_field": "test client 2"
@@ -92,7 +92,7 @@ PUT /test_index/test_type/7?version=1
 
 （5）在乐观锁成功阻止并发问题之后，尝试正确的完成更新
 
-```json
+```http request
 GET /test_index/test_type/7
 
 {
@@ -111,7 +111,7 @@ GET /test_index/test_type/7
 
 基于最新的数据和版本号，去进行修改，修改后，带上最新的版本号，可能这个步骤会需要反复执行好几次，才能成功，特别是在多线程并发更新同一条数据很频繁的情况下
 
-```json
+```http request
 PUT /test_index/test_type/7?version=2 
 {
   "test_field": "test client 2"

@@ -155,7 +155,7 @@ yellow open   .kibana rUm9n9wMRQCCrRDEhqneBg   1   1          1            0    
 
 （1）新增商品：新增文档，建立索引   
 
-```json
+```http request
 PUT /index/type/id
 {
   "json数据"
@@ -236,13 +236,13 @@ GET /ecommerce/product/1
 
 （3）修改商品：替换文档   
 
-```json
+```http request
 PUT /ecommerce/product/1
 {
     "name" : "jiaqiangban gaolujie yagao",
     "desc" :  "gaoxiao meibai",
     "price" :  30,
-    "producer" :      "gaolujie producer",
+    "producer" : "gaolujie producer",
     "tags": [ "meibai", "fangzhu" ]
 }
 ```
@@ -277,7 +277,7 @@ PUT /ecommerce/product/1
 }
 ```
 
-```json
+```http request
 PUT /ecommerce/product/1
 {
     "name" : "jiaqiangban gaolujie yagao"
@@ -292,7 +292,7 @@ PUT /ecommerce/product/1
 
 （4）修改商品：更新文档   
 
-```json
+```http request
 POST /ecommerce/product/1/_update
 {
   "doc": {
@@ -322,7 +322,7 @@ POST /ecommerce/product/1/_update
 
 （5）删除商品：删除文档
 
-```json
+```http request
 DELETE /ecommerce/product/1
 
 {

@@ -6,7 +6,7 @@
 
 2、我们来讲解一下，搜索的timeout机制，底层的原理，画图讲解
 
-```json
+```http request
 GET /_search
 
 {
@@ -41,13 +41,13 @@ GET /_search
 - hits.max_score：本次搜索的所有结果中，最大的相关度分数是多少，每一条document对于search的相关度，越相关，_score分数越大，排位越靠前_
 - _hits.hits：默认查询前10条数据，完整数据，_score降序排序
 - shards：shards fail的条件（primary和replica全部挂掉），不影响其他shard。默认情况下来说，一个搜索请求，会打到一个index的所有primary shard上去，当然了，每个primary shard都可能会有一个或多
-- replic shard，所以请求也可以到primary shard的其中一个replica shard上去。
+- replica shard，所以请求也可以到primary shard的其中一个replica shard上去。
 - timeout：默认无timeout，latency平衡completeness，手动指定timeout，timeout查询执行机制
 - timeout=10ms，timeout=1s，timeout=1m
 
 
 
-```
+```http request
 GET /_search?timeout=10m
 ```
 

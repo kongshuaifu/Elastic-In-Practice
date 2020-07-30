@@ -14,7 +14,10 @@
 （5）replica shard是primary shard的副本，负责容错，以及承担读请求负载   
 （6）primary shard的数量在创建索引的时候就固定了，replica shard的数量可以随时修改   
 （7）primary shard的默认数量是5，replica默认是1，默认有10个shard，5个primary shard，5个replica shard   
-（8）primary shard不能和自己的replica shard放在同一个节点上（否则节点宕机，primary shard和副本都丢失，起不到容错的作用），但是可以和其他primary shard的replica shard放在同一个节点上   
+（8）primary shard不能和自己的replica shard放在同一个节点上（否则节点宕机，primary shard和副本都丢失，起不到容错的作用），但是可以和其他primary shard的replica shard放在同一个节点上 
+
+ 注：
+   shard 分布式随机的，并不是所有的primary shard都分布在 master 节点上，replica shard 分布在 salve 节点上   
 
 
 

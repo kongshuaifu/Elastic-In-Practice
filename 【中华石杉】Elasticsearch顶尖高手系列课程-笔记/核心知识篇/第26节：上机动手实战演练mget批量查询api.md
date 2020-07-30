@@ -11,7 +11,7 @@
 
 （1）一条一条的查询
 
-```json
+```http request
 GET /test_index/test_type/1
 GET /test_index/test_type/2
 ```
@@ -20,7 +20,7 @@ GET /test_index/test_type/2
 
 （2）mget批量查询
 
-```json
+```http request
 GET /_mget
 {
    "docs" : [
@@ -38,7 +38,7 @@ GET /_mget
 }
 ```
 
-```
+```json
 {
   "docs": [
     {
@@ -70,7 +70,7 @@ GET /_mget
 
 （3）如果查询的document是一个index下的不同type种的话
 
-```json
+```http request
 GET /test_index/_mget
 {
    "docs" : [
@@ -90,7 +90,7 @@ GET /test_index/_mget
 
 （4）如果查询的数据都在同一个index下的同一个type下，最简单了
 
-```json
+```http request
 GET /test_index/test_type/_mget
 {
    "ids": [1, 2]

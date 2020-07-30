@@ -2,7 +2,7 @@
 
 ### 1、_source元数据
 
-```json
+```http request
 put /test_index/test_type/1
 {
   "test_field1": "test field1",
@@ -34,7 +34,7 @@ get /test_index/test_type/1
 
 定制返回的结果，指定_source中，返回哪些field
 
-```json
+```http request
 GET /test_index/test_type/1?_source=test_field1,test_field2
 
 {

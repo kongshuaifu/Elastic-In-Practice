@@ -17,7 +17,7 @@
 
 £¨2£©put /index/type/id   
 
-```json
+```http request
 PUT /test_index/test_type/2
 {
   "test_content": "my test"
@@ -30,7 +30,7 @@ PUT /test_index/test_type/2
 
 £¨1£©post /index/type   
 
-```json
+```http request
 POST /test_index/test_type
 {
   "test_content": "my test"

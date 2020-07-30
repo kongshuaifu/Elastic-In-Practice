@@ -14,7 +14,7 @@ PUT /index/type/id，创建文档&替换文档，就是一样的语法
 
 partial update
 
-```json
+```http request
 post /index/type/id/_update 
 {
    "doc": {
@@ -37,7 +37,7 @@ partial update，看起来很方便的操作，实际内部的原理是什么样子的，然后它的优点是什
 
 ### 3、上机动手实战演练partial update
 
-```json
+```http request
 PUT /test_index/test_type/10
 {
   "test_field1": "test1",

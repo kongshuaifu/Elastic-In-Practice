@@ -12,7 +12,7 @@
 
 只能创建index时手动建立mapping，或者新增field mapping，但是不能update field mapping
 
-```json
+```http request
 PUT /website
 {
   "mappings": {
@@ -74,7 +74,7 @@ PUT /website
 }
 ```
 
-```json
+```http request
 PUT /website/_mapping/article
 {
   "properties" : {
@@ -90,7 +90,7 @@ PUT /website/_mapping/article
 
 ### 3、测试mapping
 
-```json
+```http request
 GET /website/_analyze
 {
   "field": "content",
